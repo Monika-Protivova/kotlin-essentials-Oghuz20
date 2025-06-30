@@ -1,29 +1,20 @@
 package com.motycka.edu.lesson02
 
-/*
-Define String variables for two types of coffee: espresso and cappuccino.
- */
-const val espresso = "Espresso"
-const val cappuccino = "Cappuccino"
-
-/*
-Define Double variables for the prices of espresso and cappuccino.
- */
-val espressoPrice = null
-val cappuccinoPrice = null
-
-fun variables(espressoQuantity: Int, cappuccinoQuantity: Int) {
-
-    val totalPrice: Double = TODO()
-
-    println(totalPrice)
-}
-
+// Define constant values (compile-time known)
+const val espresso: String = "Espresso"
+const val cappuccino: String = "Cappuccino"
+const val espressoPrice: Double = 2.5
+const val cappuccinoPrice: Double = 3.0
 
 fun main(args: Array<String>) {
-
+    // Count the number of orders for each coffee type
     val espressoQuantity = args.count { it == espresso }
     val cappuccinoQuantity = args.count { it == cappuccino }
 
-    variables(espressoQuantity = espressoQuantity, cappuccinoQuantity = cappuccinoQuantity)
+    // Calculate total price
+    val totalPrice = (espressoQuantity * espressoPrice) + (cappuccinoQuantity * cappuccinoPrice)
+
+    // Print the result
+    println(totalPrice)
 }
+
