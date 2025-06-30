@@ -1,7 +1,14 @@
 package com.motycka.edu.lesson03.model
 
-/*
- Implement Cuboid class that implements Shape3D interface.
-    - It should have a constructor that takes three parameters for width, height, and depth.
-    - It should override all methods from Shape3D interface.
- */
+import com.motycka.edu.lesson03.Shape3D
+
+class Cuboid(
+    val width: Double,
+    val length: Double,
+    val height: Double
+) : Shape3D {
+    override fun volume(): Double = width * length * height
+
+    override fun surfaceArea(): Double =
+        2 * (width * length + width * height + length * height)
+}
