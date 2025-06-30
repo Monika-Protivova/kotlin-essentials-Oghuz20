@@ -1,23 +1,25 @@
 package com.motycka.edu.lesson03
 
+import kotlin.math.PI
 
-/*
- Implement an object called AreaCalculator with the following methods:
- - fun calculateRectangleArea(a: Double, b: Double): Double
- - fun calculateRectangleArea(a: Int, b: Int): Double
- - fun calculateCircleArea(r: Double): Double
- - fun calculateCircleArea(r: Int): Double
- - fun calculateTriangleArea(a: Double, b: Double): Double
- - fun calculateTriangleArea(a: Int, b: Int): Double
+object AreaCalculator {
+    fun calculateRectangleArea(a: Double, b: Double): Double = a * b
+    fun calculateRectangleArea(a: Int, b: Int): Double = a * b.toDouble()
 
- The class demonstrates static polymorphism by providing multiple methods with the same name but different parameter types (Int and Double).
- The check will tolerate 0.001 inaccuracy.
- */
+    fun calculateCircleArea(r: Double): Double = PI * r * r
+    fun calculateCircleArea(r: Int): Double = PI * r * r
 
-/*
- Uncomment the main function to try the solution.
- */
+    fun calculateTriangleArea(a: Double, b: Double): Double = 0.5 * a * b
+    fun calculateTriangleArea(a: Int, b: Int): Double = 0.5 * a * b
+}
 
-//fun main() {
-//    println(AreaCalculator.calculateRectangleArea(5, 10))
-//}
+fun main() {
+    println("Rectangle Area (Int): " + AreaCalculator.calculateRectangleArea(5, 10))
+    println("Rectangle Area (Double): " + AreaCalculator.calculateRectangleArea(5.0, 10.0))
+
+    println("Circle Area (Int): " + AreaCalculator.calculateCircleArea(3))
+    println("Circle Area (Double): " + AreaCalculator.calculateCircleArea(3.5))
+
+    println("Triangle Area (Int): " + AreaCalculator.calculateTriangleArea(4, 6))
+    println("Triangle Area (Double): " + AreaCalculator.calculateTriangleArea(4.5, 6.5))
+}
