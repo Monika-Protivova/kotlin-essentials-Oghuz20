@@ -1,4 +1,5 @@
 package com.motycka.edu.lesson02
+import com.motycka.edu.lesson02.Constants.*
 
 fun conditionals() {
     val orders = listOf(
