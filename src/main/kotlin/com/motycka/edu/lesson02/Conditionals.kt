@@ -1,6 +1,4 @@
 package com.motycka.edu.lesson02
-import com.motycka.edu.lesson02.Constants.*
-
 fun conditionals() {
     val orders = listOf(
         Triple(1, listOf(ESPRESSO, CAPPUCCINO, LATTE, AMERICANO), 9.0),
