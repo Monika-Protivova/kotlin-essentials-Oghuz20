@@ -47,3 +47,6 @@ fun main() {
     }
 }
 
+val collections = listOf("Espresso", "Latte", "Cappuccino")
+
+
