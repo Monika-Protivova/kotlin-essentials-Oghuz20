@@ -1,5 +1,4 @@
 package com.motycka.edu.lesson02
-import com.motycka.edu.lesson02.Constants.*
 
 // collections() function for testing
 fun collections() {
