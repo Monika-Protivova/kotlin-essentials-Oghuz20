@@ -13,3 +13,4 @@ fun main(args: Array<String>) {
     val totalPrice = (espressoQuantity * espressoPrice) + (cappuccinoQuantity * cappuccinoPrice)
     println(totalPrice)
 }
+fun variables(): List<Any> = listOf("Espresso", "Cappuccino", 2.5, 3.0)
