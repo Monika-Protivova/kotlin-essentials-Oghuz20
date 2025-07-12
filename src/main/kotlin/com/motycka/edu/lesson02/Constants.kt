@@ -1,5 +1,5 @@
-// src/main/kotlin/com/motycka/edu/lesson02/Constants.kt
 package com.motycka.edu.lesson02
+import com.motycka.edu.lesson02.Constants.*
 
 const val ESPRESSO = "Espresso"
 const val DOUBLE_ESPRESSO = "Double Espresso"
