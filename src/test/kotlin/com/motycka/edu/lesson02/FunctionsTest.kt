@@ -18,8 +18,8 @@ class FunctionsTest : StringSpec({
         return coffeeOrdersField.get(null) as MutableMap<Int, List<String>>
     }
 
-    fun placerOrder(items: List<String>): Int {
-        return functionsClass.getDeclaredMethod("placerOrder", List::class.java)
+    fun placeOrderTest(items: List<String>): Int {
+        return functionsClass.getDeclaredMethod("placeOrder", List::class.java)
             .apply { isAccessible = true }
             .invoke(null, items) as Int
     }
@@ -58,33 +58,32 @@ class FunctionsTest : StringSpec({
         getCoffeeOrders().clear()
     }
 
-    "placerOrder should add items to coffeeOrders and return orderId" {
+    "placeOrder should add items to coffeeOrders and return orderId" {
         val items = listOf(ESPRESSO, CAPPUCCINO)
-        val orderId = placerOrder(items)
+        val orderId = placeOrderTest(items)
 
         orderId shouldBe 0
         getCoffeeOrders()[orderId] shouldBe items
     }
 
     "payOrder should calculate correct total for a single item" {
-        val orderId = placerOrder(listOf(ESPRESSO))
+        val orderId = placeOrderTest(listOf(ESPRESSO))
         val total = payOrder(orderId)
 
         total shouldBeExactly ESPRESSO_PRICE
     }
 
     "payOrder should calculate correct total for multiple items" {
-        val orderId = placerOrder(listOf(ESPRESSO, CAPPUCCINO, AMERICANO))
+        val orderId = placeOrderTest(listOf(ESPRESSO, CAPPUCCINO, AMERICANO))
         val total = payOrder(orderId)
 
         total shouldBeExactly (ESPRESSO_PRICE + CAPPUCCINO_PRICE + AMERICANO_PRICE)
     }
 
     "payOrder should apply discount for 3 or more items" {
-        val orderId = placerOrder(listOf(ESPRESSO, CAPPUCCINO, AMERICANO, FLAT_WHITE))
+        val orderId = placeOrderTest(listOf(ESPRESSO, CAPPUCCINO, AMERICANO, FLAT_WHITE))
         val total = payOrder(orderId)
 
-        // Discount should be the price of the cheapest item (AMERICANO)
         total shouldBeExactly (ESPRESSO_PRICE + CAPPUCCINO_PRICE + FLAT_WHITE_PRICE)
     }
 
@@ -97,7 +96,7 @@ class FunctionsTest : StringSpec({
     }
 
     "completeOrder should remove the order from coffeeOrders" {
-        val orderId = placerOrder(listOf(ESPRESSO))
+        val orderId = placeOrderTest(listOf(ESPRESSO))
 
         getCoffeeOrders().size shouldBe 1
 
