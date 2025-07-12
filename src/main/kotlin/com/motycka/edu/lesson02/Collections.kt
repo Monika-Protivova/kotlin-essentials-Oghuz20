@@ -47,6 +47,6 @@ fun main() {
     }
 }
 
-val collections = listOf("Espresso", "Latte", "Cappuccino")
+fun collections(): List<String> = listOf("Americano", "Latte", "Cappuccino")
 
 
