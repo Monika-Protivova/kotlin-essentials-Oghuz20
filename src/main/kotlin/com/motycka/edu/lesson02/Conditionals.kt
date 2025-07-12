@@ -45,5 +45,5 @@ fun main() {
     }
 }
 
-val conditionals = listOf(true, false, true)
+fun conditionals(): List<Boolean> = listOf(true, false, true)
 
