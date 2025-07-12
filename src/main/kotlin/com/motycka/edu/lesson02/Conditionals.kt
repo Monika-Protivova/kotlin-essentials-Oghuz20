@@ -44,3 +44,6 @@ fun main() {
         println("Total price for Order ID $orderId: $totalPrice")
     }
 }
+
+val conditionals = listOf(true, false, true)
+
