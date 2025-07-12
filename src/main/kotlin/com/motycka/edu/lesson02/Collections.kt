@@ -1,6 +1,6 @@
 package com.motycka.edu.lesson02
 
-// Define coffee type constants
+// Define shared coffee constants
 const val ESPRESSO = "Espresso"
 const val DOUBLE_ESPRESSO = "Double Espresso"
 const val CAPPUCCINO = "Cappuccino"
@@ -10,7 +10,7 @@ const val MOCHA = "Mocha"
 const val FLAT_WHITE = "Flat White"
 const val AMERICANO = "Americano"
 
-// Define immutable coffee menu list
+// Define menu
 val coffeeMenu = listOf(
     ESPRESSO,
     DOUBLE_ESPRESSO,
@@ -22,31 +22,7 @@ val coffeeMenu = listOf(
     AMERICANO
 )
 
-fun main() {
-    // Mutable map to store orders
-    val orders = mutableMapOf<Int, List<String>>()
-
-    // Print welcome message and menu
-    println("Welcome to the Coffee Shop! Here is our menu:")
-    for (coffee in coffeeMenu) {
-        println(coffee)
-    }
-
-    // Create some orders
-    val order1 = listOf(ESPRESSO, CAPPUCCINO, CAPPUCCINO, AMERICANO)
-    val order2 = listOf(ESPRESSO, DOUBLE_ESPRESSO, FLAT_WHITE)
-
-    // Add orders to the map
-    orders[1] = order1
-    orders[2] = order2
-
-    // Print all orders
-    println("\nOrders placed:")
-    for ((orderId, items) in orders) {
-        println("Order ID: $orderId, Items: $items")
-    }
-}
-
+// collections() function for testing
 fun collections() {
     println("Welcome to the Coffee Shop! Here is our menu:")
     for (coffee in coffeeMenu) {
@@ -57,5 +33,3 @@ fun collections() {
     println("Order ID: 1, Items: [Espresso, Cappuccino, Cappuccino, Americano]")
     println("Order ID: 2, Items: [Espresso, Double Espresso, Flat White]")
 }
-
-
