@@ -1,6 +1,7 @@
 package com.motycka.edu.lesson04
 
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.doubles.plusOrMinus
 import io.kotest.matchers.shouldBe
 
 class TemperatureConverterTest : StringSpec({
