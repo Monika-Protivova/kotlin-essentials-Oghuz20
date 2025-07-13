@@ -1,4 +1,3 @@
-// Lesson 03 - Rectangle Model
 package com.motycka.edu.lesson03.model
 
 open class Rectangle(
