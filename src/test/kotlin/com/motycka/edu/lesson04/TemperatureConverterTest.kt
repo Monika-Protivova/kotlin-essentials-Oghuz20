@@ -6,20 +6,51 @@ import io.kotest.matchers.shouldBe
 
 class TemperatureConverterTest : StringSpec({
 
-    "convert 32°F to Celsius should return 0°C" {
-        TemperatureConverter.toCelsius(32.0) shouldBe 0.0
+    "convert Celsius to Fahrenheit where celsius is 0" {
+
+        val celsius = 0.0
+        val fahrenheit = TemperatureConverter.toFahrenheit(celsius)
+
+        fahrenheit shouldBe 32.0
     }
 
-    "convert 212°F to Celsius should return 100°C" {
-        TemperatureConverter.toCelsius(212.0) shouldBe 100.0
+    "convert Celsius to Fahrenheit where celsius is 100" {
+
+        val celsius = 100.0
+        val fahrenheit = TemperatureConverter.toFahrenheit(celsius)
+
+        fahrenheit shouldBe 212.0
     }
 
-    "convert 98.6°F to Celsius should return approximately 37°C" {
-        TemperatureConverter.toCelsius(98.6) shouldBe (37.0 +- 0.1)
+    "convert Fahrenheit to Celsius where fahrenheit is 32" {
+
+        val fahrenheit = 32.0
+        val celsius = TemperatureConverter.toCelsius(fahrenheit)
+
+        celsius shouldBe 0.0
     }
 
-    "convert -40°F to Celsius should return -40°C" {
-        TemperatureConverter.toCelsius(-40.0) shouldBe -40.0
+    "convert Fahrenheit to Celsius where fahrenheit is 212" {
+
+        val fahrenheit = 212.0
+        val celsius = TemperatureConverter.toCelsius(fahrenheit)
+
+        celsius shouldBe 100.0
     }
 
+    "convert Fahrenheit to Celsius where fahrenheit is 98.6" {
+
+        val fahrenheit = 98.6
+        val celsius = TemperatureConverter.toCelsius(fahrenheit)
+
+        celsius shouldBe (37.0 plusOrMinus 0.001)
+    }
+
+    "convert Fahrenheit to Celsius where fahrenheit is negative" {
+
+        val fahrenheit = -4.0
+        val celsius = TemperatureConverter.toCelsius(fahrenheit)
+
+        celsius shouldBe -20.0
+    }
 })
