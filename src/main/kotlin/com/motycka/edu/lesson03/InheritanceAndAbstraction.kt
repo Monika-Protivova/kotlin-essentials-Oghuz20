@@ -11,7 +11,7 @@ fun main() {
     println("Square area: ${square.area()}")
     println("Square perimeter: ${square.perimeter()}")
 
-    val cube = square.to3D()
+    val cube = square.to3D(square.width)
     println("Cube volume: ${cube.volume()}")
     println("Cube surface area: ${cube.surfaceArea()}")
 
