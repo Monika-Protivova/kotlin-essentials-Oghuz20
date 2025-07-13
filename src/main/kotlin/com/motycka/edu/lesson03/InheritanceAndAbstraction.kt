@@ -1,6 +1,8 @@
 package com.motycka.edu.lesson03
 
-import com.motycka.edu.lesson03.model.*
+import com.motycka.edu.lesson03.model.Rectangle
+import com.motycka.edu.lesson03.model.Square
+import com.motycka.edu.lesson03.model.Circle
 
 fun main() {
     val rectangle = Rectangle(2.0, 3.0)
@@ -11,7 +13,7 @@ fun main() {
     println("Square area: ${square.area()}")
     println("Square perimeter: ${square.perimeter()}")
 
-    val cube = square.to3D(square.width)
+    val cube = square.to3D()
     println("Cube volume: ${cube.volume()}")
     println("Cube surface area: ${cube.surfaceArea()}")
 
