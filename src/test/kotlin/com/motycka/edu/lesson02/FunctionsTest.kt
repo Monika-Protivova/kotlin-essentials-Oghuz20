@@ -1,5 +1,4 @@
 package com.motycka.edu.lesson02
-import com.motycka.edu.lesson02.Constants.*
 
 import com.motycka.edu.captureStdout
 import com.motycka.edu.getClass
@@ -18,8 +17,8 @@ class FunctionsTest : StringSpec({
         return coffeeOrdersField.get(null) as MutableMap<Int, List<String>>
     }
 
-    fun placeOrderTest(items: List<String>): Int {
-        return functionsClass.getDeclaredMethod("placeOrder", List::class.java)
+    fun placerOrder(items: List<String>): Int {
+        return functionsClass.getDeclaredMethod("placerOrder", List::class.java)
             .apply { isAccessible = true }
             .invoke(null, items) as Int
     }
@@ -58,32 +57,33 @@ class FunctionsTest : StringSpec({
         getCoffeeOrders().clear()
     }
 
-    "placeOrder should add items to coffeeOrders and return orderId" {
+    "placerOrder should add items to coffeeOrders and return orderId" {
         val items = listOf(ESPRESSO, CAPPUCCINO)
-        val orderId = placeOrderTest(items)
+        val orderId = placerOrder(items)
 
         orderId shouldBe 0
         getCoffeeOrders()[orderId] shouldBe items
     }
 
     "payOrder should calculate correct total for a single item" {
-        val orderId = placeOrderTest(listOf(ESPRESSO))
+        val orderId = placerOrder(listOf(ESPRESSO))
         val total = payOrder(orderId)
 
         total shouldBeExactly ESPRESSO_PRICE
     }
 
     "payOrder should calculate correct total for multiple items" {
-        val orderId = placeOrderTest(listOf(ESPRESSO, CAPPUCCINO, AMERICANO))
+        val orderId = placerOrder(listOf(ESPRESSO, CAPPUCCINO, AMERICANO))
         val total = payOrder(orderId)
 
         total shouldBeExactly (ESPRESSO_PRICE + CAPPUCCINO_PRICE + AMERICANO_PRICE)
     }
 
     "payOrder should apply discount for 3 or more items" {
-        val orderId = placeOrderTest(listOf(ESPRESSO, CAPPUCCINO, AMERICANO, FLAT_WHITE))
+        val orderId = placerOrder(listOf(ESPRESSO, CAPPUCCINO, AMERICANO, FLAT_WHITE))
         val total = payOrder(orderId)
 
+        // Discount should be the price of the cheapest item (AMERICANO)
         total shouldBeExactly (ESPRESSO_PRICE + CAPPUCCINO_PRICE + FLAT_WHITE_PRICE)
     }
 
@@ -96,7 +96,7 @@ class FunctionsTest : StringSpec({
     }
 
     "completeOrder should remove the order from coffeeOrders" {
-        val orderId = placeOrderTest(listOf(ESPRESSO))
+        val orderId = placerOrder(listOf(ESPRESSO))
 
         getCoffeeOrders().size shouldBe 1
 
