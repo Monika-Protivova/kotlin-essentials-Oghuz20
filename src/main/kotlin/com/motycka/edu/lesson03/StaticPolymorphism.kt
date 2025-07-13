@@ -12,12 +12,10 @@ object AreaCalculator {
 }
 
 fun main() {
-    println("Rectangle Area (Int): " + AreaCalculator.calculateRectangleArea(5, 10))
-    println("Rectangle Area (Double): " + AreaCalculator.calculateRectangleArea(5.0, 10.0))
-
-    println("Circle Area (Int): " + AreaCalculator.calculateCircleArea(3))
-    println("Circle Area (Double): " + AreaCalculator.calculateCircleArea(3.5))
-
-    println("Triangle Area (Int): " + AreaCalculator.calculateTriangleArea(4, 6))
-    println("Triangle Area (Double): " + AreaCalculator.calculateTriangleArea(4.5, 6.5))
+    println(AreaCalculator.calculateRectangleArea(5, 10))
+    println(AreaCalculator.calculateRectangleArea(5.5, 10.5))
+    println(AreaCalculator.calculateCircleArea(7))
+    println(AreaCalculator.calculateCircleArea(7.5))
+    println(AreaCalculator.calculateTriangleArea(4, 8))
+    println(AreaCalculator.calculateTriangleArea(4.5, 8.5))
 }
