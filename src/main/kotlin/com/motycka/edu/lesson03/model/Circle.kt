@@ -1,9 +1,4 @@
 package com.motycka.edu.lesson03.model
-
-import com.motycka.edu.lesson03.Ellipse
-import com.motycka.edu.lesson03.Shape2D
-import com.motycka.edu.lesson03.Shape3D
-import com.motycka.edu.lesson03.model.Sphere
 import kotlin.math.PI
 
 class Circle(override val radius: Double) : Shape2D, Ellipse {
