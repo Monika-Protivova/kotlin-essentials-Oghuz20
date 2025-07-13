@@ -1,4 +1,4 @@
-package com.motycka.edu.lesson03
+package com.motycka.edu.lesson03.model
 
 interface Shape2D {
     fun area(): Double
