@@ -1,13 +1,41 @@
 package com.motycka.edu.lesson02
 
-// collections() function for testing
-fun collections() {
-    println("Welcome to the Coffee Shop! Here is our menu:")
-    for (coffee in coffeeMenu) {
-        println(coffee)
-    }
+const val ESPRESSO = "Espresso"
+const val DOUBLE_ESPRESSO = "Double Espresso"
+const val CAPPUCCINO = "Cappuccino"
+const val LATTE = "Latte"
+const val MACCHIATO = "Macchiato"
+const val MOCHA = "Mocha"
+const val FLAT_WHITE = "Flat White"
+const val AMERICANO = "Americano"
 
-    println("Orders placed:")
-    println("Order ID: 1, Items: [Espresso, Cappuccino, Cappuccino, Americano]")
-    println("Order ID: 2, Items: [Espresso, Double Espresso, Flat White]")
+val coffeeMenu: List<String> = listOf(
+    ESPRESSO,
+    DOUBLE_ESPRESSO,
+    CAPPUCCINO,
+    LATTE,
+    MACCHIATO,
+    MOCHA,
+    FLAT_WHITE,
+    AMERICANO
+)
+fun collections() {
+    val orders: MutableMap<Int, List<String>> = mutableMapOf()
+    print("Welcome to the Coffee Shop! Here is our menu:\n")
+    coffeeMenu.forEach { items -> print("$items\n") }
+
+    val order1 = listOf(ESPRESSO, CAPPUCCINO, CAPPUCCINO, AMERICANO)
+    orders[1] = order1
+
+    val order2 = listOf(ESPRESSO, DOUBLE_ESPRESSO, FLAT_WHITE)
+    orders[2] = order2
+
+        print("Orders placed:\n")
+    orders.forEach {
+        print("Order ID: ${it.key}, Items: ${it.value}\n")
+    }
+}
+
+fun main() {
+    collections()
 }
