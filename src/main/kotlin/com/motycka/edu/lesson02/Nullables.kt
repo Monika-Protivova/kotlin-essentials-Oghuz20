@@ -22,3 +22,7 @@ fun main() {
     val coffee3 = brewCoffee(coffeeGrams = 20.0, waterMl = 300.0, milkMl = null, sugarGrams = 10.0)
     println(coffee3)
 }
+
+//Coffee (10.0 g, 200.0 ml) black unsweetened
+//Coffee (15.0 g, 250.0 ml) with milk sweetened
+//Coffee (20.0 g, 300.0 ml) black sweetened
