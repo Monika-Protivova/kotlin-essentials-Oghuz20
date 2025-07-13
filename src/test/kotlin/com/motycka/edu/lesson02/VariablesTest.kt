@@ -1,5 +1,4 @@
 package com.motycka.edu.lesson02
-import com.motycka.edu.lesson02.Constants.*
 
 import com.motycka.edu.captureStdout
 import io.kotest.core.spec.style.StringSpec
@@ -7,9 +6,8 @@ import io.kotest.matchers.shouldBe
 
 class VariablesTest : StringSpec({
     "coffee price variables should have correct values" {
-        ESPRESSO_PRICE shouldBe 2.5
-        CAPPUCCINO_PRICE shouldBe 3.0
-
+        espressoPrice shouldBe 2.5
+        cappuccinoPrice shouldBe 3.0
     }
 
     "should calculate total price for no coffees" {
