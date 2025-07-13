@@ -4,13 +4,11 @@ import kotlin.math.PI
 
 object AreaCalculator {
     fun calculateRectangleArea(a: Double, b: Double): Double = a * b
-    fun calculateRectangleArea(a: Int, b: Int): Double = a * b.toDouble()
-
+    fun calculateRectangleArea(a: Int, b: Int): Double = a.toDouble() * b.toDouble()
     fun calculateCircleArea(r: Double): Double = PI * r * r
-    fun calculateCircleArea(r: Int): Double = PI * r * r
-
+    fun calculateCircleArea(r: Int): Double = PI * r.toDouble() * r.toDouble()
     fun calculateTriangleArea(a: Double, b: Double): Double = 0.5 * a * b
-    fun calculateTriangleArea(a: Int, b: Int): Double = 0.5 * a * b
+    fun calculateTriangleArea(a: Int, b: Int): Double = 0.5 * a.toDouble() * b.toDouble()
 }
 
 fun main() {
