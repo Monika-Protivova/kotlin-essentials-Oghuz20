@@ -1,5 +1,6 @@
 package com.motycka.edu.lesson03.model
 
-class Square(private val side: Double) : Rectangle(side, side) {
-    fun to3D(): Cuboid = Cuboid(side, side, side)
+class Square(val side: Double) : Rectangle(side, side) {
+    override fun to3D(depth: Double): Shape3D = Cuboid(side, side, height)
+    fun to3D(): Shape3D = to3D(side)
 }
