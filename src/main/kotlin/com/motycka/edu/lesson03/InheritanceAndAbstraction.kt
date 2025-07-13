@@ -1,3 +1,4 @@
+// Lesson 03 - Inheritance and Abstraction
 package com.motycka.edu.lesson03
 
 import com.motycka.edu.lesson03.model.Rectangle
