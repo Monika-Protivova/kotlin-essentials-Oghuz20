@@ -1,5 +1,4 @@
 package com.motycka.edu.lesson02
-import com.motycka.edu.lesson02.Constants.*
 
 import com.motycka.edu.captureStdout
 import io.kotest.core.spec.style.StringSpec
