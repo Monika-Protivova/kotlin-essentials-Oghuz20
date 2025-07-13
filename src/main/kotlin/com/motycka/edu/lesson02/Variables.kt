@@ -1,14 +1,20 @@
 package com.motycka.edu.lesson02
 
-fun main(args: Array<String>) {
-    val espressoQuantity = args.count { it == ESPRESSO }
-    val cappuccinoQuantity = args.count { it == CAPPUCCINO }
+const val espresso = "Espresso"
+const val cappuccino = "Cappuccino"
 
-    val totalPrice = (espressoQuantity * ESPRESSO_PRICE) + (cappuccinoQuantity * CAPPUCCINO_PRICE)
+const val espressoPrice = 2.5
+const val cappuccinoPrice = 3.0
+
+fun variables(espressoQuantity: Int, cappuccinoQuantity: Int) {
+    val totalPrice: Double = (espressoQuantity * espressoPrice) + (cappuccinoQuantity * cappuccinoPrice)
     println(totalPrice)
 }
 
-fun variables(espressoQuantity: Int, cappuccinoQuantity: Int) {
-    val totalPrice = (espressoQuantity * ESPRESSO_PRICE) + (cappuccinoQuantity * CAPPUCCINO_PRICE)
-    println(totalPrice)
+
+fun main(args: Array<String>) {
+    val espressoQuantity = args.count { it == espresso }
+    val cappuccinoQuantity = args.count { it == cappuccino }
+
+    variables(espressoQuantity = espressoQuantity, cappuccinoQuantity = cappuccinoQuantity)
 }
